@@ -99,7 +99,7 @@ export const skills: SkillGroup[] = [
   },
   {
     category: "Tools",
-    items: ["Figma", "Procreate", "Canva", "Notion", "Google Workspace", "Adobe XD"],
+    items: ["Figma", "Procreate", "Canva", "Notion", "Google Workspace", "Adobe XD", "Rive"],
   },
   {
     category: "Front-End (basic)",
