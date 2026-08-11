@@ -214,7 +214,15 @@ export const projects: Project[] = [
       "Design work centered on the web app, with the development team adapting the experience for mobile.",
     outcome:
       "The redesigned site is live at skinhappymd.com, now handling appointments, recommendations, and shopping in one place for the clinic's patients.",
-    galleryCount: 4,
+    galleryCount: 5,
+    images: [
+      { src: "/work/skinhappy/1.jpg", width: 1600, height: 826 },
+      { src: "/work/skinhappy/2.jpg", width: 1600, height: 826 },
+      { src: "/work/skinhappy/3.jpg", width: 1273, height: 1600 },
+      { src: "/work/skinhappy/4.jpg", width: 1600, height: 1558 },
+      { src: "/work/skinhappy/5.jpg", width: 950, height: 1600 },
+    ],
+    thumbnail: { src: "/work/skinhappy/1.jpg", width: 1600, height: 826 },
   },
   {
     slug: "verulink",
