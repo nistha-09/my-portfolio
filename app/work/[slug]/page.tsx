@@ -48,9 +48,36 @@ export default function CaseStudyPage({ params }: Props) {
             <Link href="/#work" className="text-sm text-muted hover:text-ink">
               ← Back to work
             </Link>
-            <h1 className="mt-6 font-display text-4xl leading-tight text-ink sm:text-5xl">
-              {project.name}
-            </h1>
+            <div className="mt-6 flex items-center gap-3">
+              <h1 className="font-display text-4xl leading-tight text-ink sm:text-5xl">
+                {project.name}
+              </h1>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`View live product — ${project.name}`}
+                  className="text-muted transition-colors hover:text-accent"
+                >
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                </a>
+              )}
+            </div>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
               {project.oneLiner}
             </p>
