@@ -118,6 +118,8 @@ export type Project = {
   challenge: string;
   solution: string;
   myRole: string;
+  // Optional media (image or gif) shown under the My Role description.
+  myRoleMedia?: { src: string; width: number; height: number };
   designDecisions: string;
   responsiveDesign: string;
   outcome: string;
@@ -263,13 +265,20 @@ export const projects: Project[] = [
       "I built VeruFi's design system from scratch, iterating through multiple full directions with the product owner — design systems, logo explorations, and brand variations — before converging on a final identity. That system extended across the product family, including Verulend, the money market within the VeruFi umbrella.",
     myRole:
       "I designed VeruFi's full visual and design system, the marketing site, core product UI, and Verulend's money market interface. I also created the rotating logo currently live on the site — my first shipped work in Rive, a motion/3D tool I picked up specifically for this project and am still building fluency in.",
+    myRoleMedia: { src: "/work/verufi/role.gif", width: 640, height: 360 },
     designDecisions:
       "The direction went through heavy iteration — multiple full design systems and logo variations — before landing on the current identity. That process, while long, meant the final system was genuinely stress-tested against real feedback rather than shipped on a first instinct.",
     responsiveDesign:
       "Designed across desktop and mobile web to match how DeFi users actually access these tools.",
     outcome:
       "The design system and rotating logo are live at veru.fi. Full application of the system across every integrated product was still rolling out when the project went on hiatus — the current live site reflects the brand and logo work, with more to come as the project resumes. Verulend, the money market within the VeruFi umbrella, is live separately at amm.venture23.xyz/money-market.",
-    galleryCount: 5,
+    galleryCount: 3,
+    images: [
+      { src: "/work/verufi/1.jpg", width: 491, height: 1600 },
+      { src: "/work/verufi/2.jpg", width: 1336, height: 1600 },
+      { src: "/work/verufi/3.jpg", width: 1105, height: 1600 },
+    ],
+    thumbnail: { src: "/work/verufi/5.jpg", width: 1600, height: 798 },
   },
 ];
 

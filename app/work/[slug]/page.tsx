@@ -35,7 +35,7 @@ export default function CaseStudyPage({ params }: Props) {
   const sections = [
     { heading: "Challenge", body: project.challenge },
     { heading: "Solution", body: project.solution },
-    { heading: "My Role", body: project.myRole },
+    { heading: "My Role", body: project.myRole, media: project.myRoleMedia },
     { heading: "Design Decisions", body: project.designDecisions },
     { heading: "Responsive Design", body: project.responsiveDesign },
   ];
@@ -97,6 +97,16 @@ export default function CaseStudyPage({ params }: Props) {
               <p className="mt-4 max-w-3xl text-base leading-relaxed text-ink/80">
                 {section.body}
               </p>
+              {section.media && (
+                // eslint-disable-next-line @next/next/no-img-element -- next/image doesn't preserve gif animation
+                <img
+                  src={section.media.src}
+                  alt={`${project.name} — ${section.heading}`}
+                  width={section.media.width}
+                  height={section.media.height}
+                  className="mt-6 max-w-xl rounded-lg border border-line"
+                />
+              )}
             </FadeIn>
           </div>
         </section>
