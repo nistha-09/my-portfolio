@@ -11,6 +11,10 @@ body {
   color: #262220;
 }
 
+.font-display {
+  font-weight: 600;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .fade-in {
     opacity: 0;
