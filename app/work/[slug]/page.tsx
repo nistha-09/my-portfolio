@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/data";
@@ -108,13 +109,27 @@ export default function CaseStudyPage({ params }: Props) {
             <h2 className="font-display text-2xl text-ink">Gallery</h2>
           </FadeIn>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {Array.from({ length: project.galleryCount }).map((_, i) => (
-              <FadeIn key={i} delay={i * 50}>
-                <ImagePlaceholder
-                  label={`Add project screenshot ${i + 1} — ${project.name}`}
-                />
-              </FadeIn>
-            ))}
+            {Array.from({ length: project.galleryCount }).map((_, i) => {
+              const image = project.images?.[i];
+              return (
+                <FadeIn key={i} delay={i * 50}>
+                  {image ? (
+                    <Image
+                      src={image.src}
+                      alt={`${project.name} screenshot ${i + 1}`}
+                      width={image.width}
+                      height={image.height}
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="w-full rounded-lg border border-line"
+                    />
+                  ) : (
+                    <ImagePlaceholder
+                      label={`Add project screenshot ${i + 1} — ${project.name}`}
+                    />
+                  )}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>

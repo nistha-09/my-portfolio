@@ -122,6 +122,7 @@ export type Project = {
   responsiveDesign: string;
   outcome: string;
   galleryCount: number;
+  images?: { src: string; width: number; height: number }[];
 };
 
 export const projects: Project[] = [
@@ -132,6 +133,7 @@ export const projects: Project[] = [
       "An interactive 3D network map that turns Karrier One's deployment data into something people can actually explore.",
     role: "UI/UX Designer",
     tools: ["Figma", "Mapbox 3D"],
+    liveUrl: "https://explorer.karrier.one/",
     overview:
       "Karrier One Explorer is an interactive network map built to help people understand where Karrier One's cellular towers and hotspots are actually deployed. Rather than parsing a list, users can visually explore the network and drill into detail from a live 3D map.",
     challenge:
@@ -147,6 +149,12 @@ export const projects: Project[] = [
     outcome:
       "The Explorer turned a list-based network into a visual, interactive way to understand Karrier One's deployment. It shipped through design and into production and is live today. The project reinforced how much a complex visual experience like this depends on close design–dev alignment, and on staying involved through QA to protect spacing, hierarchy, and interaction detail once it's in engineers' hands.",
     galleryCount: 5,
+    images: [
+      { src: "/work/karrier-one-explorer/1.jpg", width: 1600, height: 832 },
+      { src: "/work/karrier-one-explorer/2.jpg", width: 1600, height: 830 },
+      { src: "/work/karrier-one-explorer/3.jpg", width: 1600, height: 833 },
+      { src: "/work/karrier-one-explorer/4.jpg", width: 720, height: 1600 },
+    ],
   },
   {
     slug: "movie-mogul",
