@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { education, experience, profile, projects, skills } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
 import Timeline from "@/components/Timeline";
 import SkillsGrid from "@/components/SkillsGrid";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn";
 
 export default function HomePage() {
@@ -42,11 +42,16 @@ export default function HomePage() {
           </FadeIn>
 
           <FadeIn delay={120}>
-            <ImagePlaceholder
-              label="Add headshot"
-              aspect="aspect-square"
-              className="mx-auto max-w-[280px]"
-            />
+            <div className="relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-line">
+              <Image
+                src="/headshot.jpg"
+                alt={`Portrait of ${profile.name}`}
+                fill
+                sizes="280px"
+                className="object-cover"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
