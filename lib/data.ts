@@ -125,6 +125,8 @@ export type Project = {
   // Ignored once `images` is set — the gallery then shows exactly those images.
   galleryCount: number;
   images?: { src: string; width: number; height: number }[];
+  // Home page card image. Falls back to the ImagePlaceholder when unset.
+  thumbnail?: { src: string; width: number; height: number };
 };
 
 export const projects: Project[] = [
@@ -157,6 +159,7 @@ export const projects: Project[] = [
       { src: "/work/karrier-one-explorer/3.jpg", width: 1600, height: 833 },
       { src: "/work/karrier-one-explorer/4.jpg", width: 720, height: 1600 },
     ],
+    thumbnail: { src: "/work/karrier-one-explorer/1.jpg", width: 1600, height: 832 },
   },
   {
     slug: "movie-mogul",
@@ -187,6 +190,7 @@ export const projects: Project[] = [
       { src: "/work/movie-mogul/3.jpg", width: 390, height: 844 },
       { src: "/work/movie-mogul/4.jpg", width: 390, height: 978 },
     ],
+    thumbnail: { src: "/work/movie-mogul/5.jpg", width: 1600, height: 821 },
   },
   {
     slug: "skinhappy",
