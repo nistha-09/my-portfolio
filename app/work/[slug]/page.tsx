@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/lib/data";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn";
+import Gallery from "@/components/Gallery";
 
 type Props = {
   params: { slug: string };
@@ -108,28 +107,7 @@ export default function CaseStudyPage({ params }: Props) {
           <FadeIn>
             <h2 className="font-display text-2xl text-ink">Gallery</h2>
           </FadeIn>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {project.images && project.images.length > 0
-              ? project.images.map((image, i) => (
-                  <FadeIn key={image.src} delay={i * 50}>
-                    <Image
-                      src={image.src}
-                      alt={`${project.name} screenshot ${i + 1}`}
-                      width={image.width}
-                      height={image.height}
-                      sizes="(min-width: 640px) 50vw, 100vw"
-                      className="w-full rounded-lg border border-line"
-                    />
-                  </FadeIn>
-                ))
-              : Array.from({ length: project.galleryCount }).map((_, i) => (
-                  <FadeIn key={i} delay={i * 50}>
-                    <ImagePlaceholder
-                      label={`Add project screenshot ${i + 1} — ${project.name}`}
-                    />
-                  </FadeIn>
-                ))}
-          </div>
+          <Gallery project={project} />
         </div>
       </section>
 
