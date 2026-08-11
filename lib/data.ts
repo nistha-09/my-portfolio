@@ -179,6 +179,12 @@ export const projects: Project[] = [
     outcome:
       "Mogul is live at mogul.moviepass.com. The project meant holding two different registers in one product — playful and gamified on the surface, simple and legible underneath — while still shipping something a first-time user could use with no instructions.",
     galleryCount: 5,
+    images: [
+      { src: "/work/movie-mogul/1.jpg", width: 390, height: 946 },
+      { src: "/work/movie-mogul/2.jpg", width: 390, height: 1137 },
+      { src: "/work/movie-mogul/3.jpg", width: 390, height: 844 },
+      { src: "/work/movie-mogul/4.jpg", width: 390, height: 978 },
+    ],
   },
   {
     slug: "skinhappy",
