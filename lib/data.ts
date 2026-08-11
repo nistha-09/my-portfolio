@@ -247,7 +247,12 @@ export const projects: Project[] = [
     responsiveDesign:
       "Designed to work across desktop and mobile web, since DeFi users expect to check and execute transactions from wherever they are.",
     outcome: "The rebrand is live at dev.verulink.com.",
-    galleryCount: 5,
+    galleryCount: 2,
+    images: [
+      { src: "/work/verulink/1.jpg", width: 1600, height: 824 },
+      { src: "/work/verulink/2.jpg", width: 1600, height: 820 },
+    ],
+    thumbnail: { src: "/work/verulink/1.jpg", width: 1600, height: 824 },
   },
   {
     slug: "verufi",
