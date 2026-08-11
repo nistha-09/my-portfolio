@@ -109,11 +109,9 @@ export default function CaseStudyPage({ params }: Props) {
             <h2 className="font-display text-2xl text-ink">Gallery</h2>
           </FadeIn>
           <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {Array.from({ length: project.galleryCount }).map((_, i) => {
-              const image = project.images?.[i];
-              return (
-                <FadeIn key={i} delay={i * 50}>
-                  {image ? (
+            {project.images && project.images.length > 0
+              ? project.images.map((image, i) => (
+                  <FadeIn key={image.src} delay={i * 50}>
                     <Image
                       src={image.src}
                       alt={`${project.name} screenshot ${i + 1}`}
@@ -122,14 +120,15 @@ export default function CaseStudyPage({ params }: Props) {
                       sizes="(min-width: 640px) 50vw, 100vw"
                       className="w-full rounded-lg border border-line"
                     />
-                  ) : (
+                  </FadeIn>
+                ))
+              : Array.from({ length: project.galleryCount }).map((_, i) => (
+                  <FadeIn key={i} delay={i * 50}>
                     <ImagePlaceholder
                       label={`Add project screenshot ${i + 1} — ${project.name}`}
                     />
-                  )}
-                </FadeIn>
-              );
-            })}
+                  </FadeIn>
+                ))}
           </div>
         </div>
       </section>

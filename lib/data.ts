@@ -121,6 +121,8 @@ export type Project = {
   designDecisions: string;
   responsiveDesign: string;
   outcome: string;
+  // Number of "Add screenshot" placeholders to show until real images are uploaded.
+  // Ignored once `images` is set — the gallery then shows exactly those images.
   galleryCount: number;
   images?: { src: string; width: number; height: number }[];
 };
